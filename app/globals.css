@@ -1,26 +1,87 @@
-@import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.pixel-bg {
+    background-image: url('https://i1.sndcdn.com/artworks-000649156789-lx91i9-t500x500.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+section, .calendar-box, .cat-of-the-day-card {
+    padding: 1.25rem; /* p-5 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+} 
+
+.nav-link:hover {
+    color: #51200F; /* dark-brown */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+
+.calendar .Weeks {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(81, 32, 15, 0.2); /* dark-brown opacity 0.2 */
+    padding-bottom: 5px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.calendar .Days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.calendar .Days li {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 0.9rem;
+    border-radius: 9999px; /* full rounded */
+}
+
+.calendar .Days li.inactive {
+    color: rgba(81, 32, 15, 0.5); /* lighter dark-brown */
+    cursor: default;
+}
+
+.calendar .Days li.active {
+    background-color: #EB7F50; /* primary-orange */
+    color: white; /* Changed from #EB7F50 to white for contrast */
+    font-weight: bold;
+}
+
+.calendar .icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.calendar .icons span {
+    cursor: pointer;
+    color: #51200F; /* dark-brown */
+    padding: 0.25rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+}
+
+.calendar .icons span:hover {
+    background-color: rgba(81, 32, 15, 0.1);
+}
+
+.friend-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
 }
