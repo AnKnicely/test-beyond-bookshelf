@@ -1,14 +1,21 @@
 const nextConfig = {
+  output: 'export', 
+  trailingSlash: true,
   images: {
-    // This allows Next.js to load images from the specified domains.
+    unoptimized: true, 
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'placehold.co',
-        port: '', // Leave empty if not using a specific port
-        pathname: '/**', // Allows any path on this hostname
+        port: '', 
+        pathname: '/**', 
       },
-      // You can add other external domains here if needed (e.g., 'unsplash.com')
+      {
+        protocol: 'https',
+        hostname: 'i1.sndcdn.com', 
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 };
